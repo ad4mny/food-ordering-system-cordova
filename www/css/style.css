@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/Quicksand.woff2') format('woff2');
+}
+
+body,
+html {
+    font-family: 'Quicksand', sans-serif;
+    overscroll-behavior: none;
+    min-height: 100%;
+}

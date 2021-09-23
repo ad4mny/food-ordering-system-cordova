@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eHungry</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/app/main.js"></script>
+    <script type="text/javascript" src="js/app/login.js"></script>
+</head>
+
+<body class="bg-light">
+
+    <!-- Mobile Toolbar -->
+    <div class="bg-white d-block d-lg-none d-inline-flex w-100 border-top shadow-sm ">
+        <div class="p-2 flex-fill">
+            <h3 class="mb-0 text-success fw-bold text-center py-1">eHungry</h3>
+        </div>
+    </div>
+
+    <!-- Mobile Appbar -->
+    <div class="bg-white fixed-bottom d-block d-lg-none d-inline-flex w-100 border-top shadow-sm ">
+        <div class="p-2 flex-fill">
+            <a class="btn text-success" href="#">
+                <i class="fas fa-home fa-fw fa-lg"></i>
+            </a>
+        </div>
+        <div class="p-2 flex-fill">
+            <a class="btn " href="catalog.html">
+                <i class="fas fa-utensils fa-fw fa-lg"></i>
+            </a>
+        </div>
+        <div class="p-2 flex-fill">
+            <a class="btn " href="table.html">
+                <i class="fas fa-table fa-fw fa-lg"></i>
+            </a>
+        </div>
+        <div class="p-2 flex-fill">
+            <a href="checkout.html" class="btn ">
+                <i class="fas fa-shopping-basket fa-fw fa-lg"></i>
+            </a>
+        </div>
+        <div class="p-2 flex-fill" id="profile_button">
+            <button class="btn" data-bs-toggle="modal" data-bs-target="#modal_login">
+                <i class="fas fa-user fa-fw fa-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Alerts -->
+    <div id="alert" class="w-75 position-absolute start-50 translate-middle mt-5" style="z-index: 1; top: 10%;">
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="row px-3 position-absolute top-50 start-50 translate-middle w-100">
+            <div class="col">
+                <h1 class="display-1 fw-bold mb-0">UMP eHungry</h1>
+                <h1 class="font-weight-light" id="name_placeholder">A great way to fill your appetite. </h1>
+                <p class="lead">
+                    <a href="catalog.html" class="btn btn-success">Order now</a>
+                    <a href="checkout.html" class="btn btn-outline-dark">View status</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Signup -->
+    <div class="modal fade" id="modal_signup" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body mx-4">
+                    <div class="mb-3 text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Create An Account</h4>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group mb-2">
+                            <span class="input-group-text"><i class="fas fa-user-circle fa-fw"></i></span>
+                            <input type="text" class="form-control" id="name" name="name"
+                                placeholder="Enter your full name">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group mb-2">
+                            <span class="input-group-text"><i class="fas fa-phone fa-fw"></i></span>
+                            <input type="text" class="form-control" id="contact" name="contact"
+                                placeholder="Enter your contact number">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group mb-2">
+                            <span class="input-group-text"><i class="fas fa-user fa-fw"></i></span>
+                            <input type="text" class="form-control" id="username" name="username"
+                                placeholder="Create a username">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group mb-2">
+                            <span class="input-group-text"><i class="fas fa-lock fa-fw"></i></span>
+                            <input type="password" class="form-control" id="pwd" name="password"
+                                placeholder="Choose a password">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group mb-2">
+                            <span class="input-group-text"><i class="fas fa-lock fa-fw"></i></span>
+                            <input type="password" class="form-control" id="c_pwd" name="confirm_password"
+                                placeholder="Confirm the password">
+                        </div>
+                    </div>
+                    <div class="my-3 text-center">
+                        <input type="hidden" name="role" value="0">
+                        <button type="button" class="btn btn-success" onclick="register()"><i
+                                class="fas fa-sign-in-alt"></i> Sign Up</button>
+                    </div>
+                    <div class="my-3 text-center">
+                        <small class="text-muted">
+                            Already have an account? <a href="#" class="text-primary" data-bs-dismiss="modal"
+                                data-bs-toggle="modal" data-bs-target="#modal_login">Login</a>.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Login -->
+    <div class="modal fade" id="modal_login" tabindex="-1" aria-labelledby="modal_loginLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body mx-4">
+                    <div class="mb-3">
+                        <h4 class="modal-title w-100 font-weight-bold text-center">Hello.</h4>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-user fa-fw"></i></span>
+                            <input type="text" class="form-control" name="username" id="login_username"
+                                placeholder="Username">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock fa-fw"></i></span>
+                            <input type="password" class="form-control" name="password" id="login_password"
+                                placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="my-3 text-center">
+                        <button type="button" class="btn btn-success" onclick="login()">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </button>
+                    </div>
+                    <div class="my-3">
+                        <small class="text-muted">
+                            Don't have an account? <a href="" class="text-primary" data-bs-dismiss="modal"
+                                data-bs-toggle="modal" data-bs-target="#modal_signup">Sign up</a>.
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="d-none d-lg-block text-center py-2">
+        <small>&copy; FOS 2021 </small>
+    </div>
+    
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eHungry</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/app/main.js"></script>
+    <script type="text/javascript" src="js/app/login.js"></script>
+</head>
+
+<body class="bg-light">
+
+    <!-- Mobile Toolbar -->
+    <div class="bg-white d-block d-lg-none d-inline-flex w-100 border-top shadow-sm ">
+        <div class="p-2 flex-fill">
+            <h3 class="mb-0 text-success fw-bold text-center py-1">eHungry</h3>
+        </div>
+    </div>
+
+    <!-- Mobile Appbar -->
+    <div class="bg-white fixed-bottom d-block d-lg-none d-inline-flex w-100 border-top shadow-sm ">
+        <div class="p-2 flex-fill">
+            <a class="btn " href="index.html">
+                <i class="fas fa-home fa-fw fa-lg"></i>
+            </a>
+        </div>
+        <div class="p-2 flex-fill">
+            <a class="btn " href="catalog.html">
+                <i class="fas fa-utensils fa-fw fa-lg"></i>
+            </a>
+        </div>
+        <div class="p-2 flex-fill">
+            <a class="btn " href="#">
+                <i class="fas fa-table fa-fw fa-lg"></i>
+            </a>
+        </div>
+        <div class="p-2 flex-fill">
+            <a href="checkout.html" class="btn ">
+                <i class="fas fa-shopping-basket fa-fw fa-lg"></i>
+            </a>
+        </div>
+        <div class="p-2 flex-fill" id="profile_button">
+            <button class="btn" data-bs-toggle="modal" data-bs-target="#modal_login">
+                <i class="fas fa-user fa-fw fa-lg"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Alerts -->
+    <div id="alert" class="w-75 position-absolute start-50 translate-middle mt-5" style="z-index: 1; top: 10%;">
+    </div>
+
+    <div class="container">
+        <div class="row my-3">
+            <div class="col">
+                <h1 class="fw-bold display-3 mb-0">Bookings</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="d-none d-lg-block text-center py-2">
+        <small>&copy; FOS 2021 </small>
+    </div>
+
+</body>
+
+</html>
