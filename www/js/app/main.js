@@ -74,13 +74,12 @@ $(document).on('click', '#checkoutOrder', function () {
             },
             dataType: 'json',
             success: function (data) {
-                alert(data);
-
-                if (data == false) {} else {
-                    // location.replace("checkout.html");
+                if (data == false) {
+                    alert(data);
+                } else {
+                    location.replace("checkout.html");
                 }
             }
-
         });
     } else {
         alert('Please login first!')
