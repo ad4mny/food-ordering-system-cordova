@@ -18,30 +18,21 @@ window.addEventListener('load', (event) => {
                 }
 
                 $('#display').append(
-                    '                    <div class="col d-flex">' +
-                    '                        <div class="card h-100 shadow">' +
-                    '                            <img class="card-img-top"' +
-                    '                                src="' + img + '"' +
-                    '                                alt="No Image">' +
-                    '                            <div class="card-body">' +
-                    '                                <div class="card-text">' +
-                    '                                    <h3 class="card-title text-capitalize mb-0">' +
-                    '                                        ' + data[i].cd_name + ' </h3>' +
-                    '                                </div>' +
-                    '                                <div class="card-text">' +
-                    '                                    <small class="card-text text-capitalize text-muted">' +
-                    '                                        ' + data[i].ud_full_name + '\'s Shop </small>' +
-                    '                                </div>' +
-                    '                                <div class="card-text">' +
-                    '                                    <p class="card-text">' +
-                    '                                        ' + data[i].cd_desc + ' </p>' +
-                    '                                </div>' +
+                    '     <div class="col border-bottom pb-2">' +
+                    '                        <div class="row px-3">' +
+                    '                            <div class="col-3"' +
+                    '                                style="background-image: url(\'' + img + '\'); background-size: cover;">' +
                     '                            </div>' +
-                    '                            <div class="card-footer bg-white border-0 text-center my-2">' +
-                    '                                <button class="btn btn-success" id="addOrder" value="' + data[i].cd_id + '">' +
-                    '                                    <i class="fas fa-plus fa-fw"></i>' +
-                    '                                    <span>RM ' + data[i].cd_price + '</span>' +
-                    '                                </button>' +
+                    '                            <div class="col position-relative">' +
+                    '                                <p class="text-capitalize mb-0 fw-bold">' + data[i].cd_name + '</p>' +
+                    '                                <small class="text-capitalize text-muted">' + data[i].cd_name + '\'s Shop</small><br>' +
+                    '                                <small class="text-truncate">' + data[i].cd_desc + '</small><br>' +
+                    '                                <small class="text-success">RM ' + data[i].cd_price + '</small><br>' +
+                    '                                <div class="position-absolute top-0 end-0 me-1 mt-1">' +
+                    '                                    <button class="btn btn-success btn-sm" id="addOrder" value="' + data[i].cd_id + '">' +
+                    '                                        <i class="fas fa-plus fa-fw"></i>' +
+                    '                                    </button>' +
+                    '                                </div>' +
                     '                            </div>' +
                     '                        </div>' +
                     '                    </div>'
