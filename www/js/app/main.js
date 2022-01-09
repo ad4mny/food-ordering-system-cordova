@@ -1,3 +1,4 @@
+var web_links = "http://localhost/food-ordering-system/";
 var web_links = "https://umpehungry.000webhostapp.com/";
 var user_token = JSON.parse(localStorage.getItem('users'));
 var orders_token = JSON.parse(localStorage.getItem('orders'));
