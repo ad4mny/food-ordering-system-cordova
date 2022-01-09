@@ -122,6 +122,15 @@ window.addEventListener('load', (event) => {
 
                     for (var i = 0; i < data.length; i++) {
 
+                        var payButton = '';
+
+                        if (data[i].od_status == "Completed") {
+                            payButton = '<div class="col-11 m-auto border-top mt-2 text-center">' +
+                                '       <button class="btn btn-sm text-decoration-none text-muted" id="scanPay" value="' + data[i].cd_id + '/' + data[i].od_id + '" >' +
+                                '           <i class="fas fa-qrcode text-success fa-fw"></i> Scan to Pay</button>' +
+                                '        </div>';
+                        }
+
                         $('#display').append(
                             ' <div class="row m-1 bg-white shadow rounded-3 p-1">' +
                             '            <div class="col-6 m-auto">' +
@@ -136,10 +145,7 @@ window.addEventListener('load', (event) => {
                             '            <div class="col-3 m-auto text-center">' +
                             '                <p class="mb-0">' + data[i].cd_price + '</p>' +
                             '            </div>' +
-                            '<div class="col-11 m-auto border-top mt-2 text-center">' +
-                            '       <button class="btn btn-sm text-decoration-none text-muted" id="scanPay" value="' + data[i].cd_id + '/' + data[i].od_id + '" >' +
-                            '           <i class="fas fa-qrcode text-success fa-fw"></i> Scan to Pay</button>' +
-                            '        </div>' +
+                            payButton +
                             '        </div>'
                         );
 
