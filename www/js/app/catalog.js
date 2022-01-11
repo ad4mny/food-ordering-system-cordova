@@ -18,24 +18,26 @@ window.addEventListener('load', (event) => {
                 }
 
                 $('#display').append(
-                    '     <div class="col border-bottom pb-2">' +
+                    '                <div class="col border-top pt-2 ">' +
+                    '                   <a href="#" class="text-decoration-none text-reset" id="addOrder" value="' + data[i].cd_id + '">' +
                     '                        <div class="row px-3">' +
                     '                            <div class="col-3"' +
                     '                                style="background-image: url(\'' + img + '\'); background-size: cover;">' +
                     '                            </div>' +
                     '                            <div class="col position-relative">' +
-                    '                                <p class="text-capitalize mb-0 fw-bold">' + data[i].cd_name + '</p>' +
-                    '                                <small class="text-capitalize text-muted">' + data[i].cd_name + '\'s Shop</small><br>' +
-                    '                                <small class="text-truncate">' + data[i].cd_desc + '</small><br>' +
-                    '                                <small class="text-success">RM ' + data[i].cd_price + '</small><br>' +
-                    '                                <div class="position-absolute top-0 end-0 me-1 mt-1">' +
-                    '                                    <button class="btn btn-success btn-sm" id="addOrder" value="' + data[i].cd_id + '">' +
-                    '                                        <i class="fas fa-plus fa-fw"></i>' +
-                    '                                    </button>' +
+                    '                                <h5 class="text-capitalize mb-0 fw-bold">' + data[i].cd_name + '</h5>' +
+                    '                                <p class="text-muted text-wrap">' + data[i].cd_desc + '</p>' +
+                    '                                <div class="d-flex justify-content-between">' +
+                    '                                   <small class="text-capitalize text-muted fw-lighter">' +
+                    data[i].ud_full_name + '\'s Shop</small><br>' +
+                    '                                   <h5 class="text-success fw-bold mb-0">' +
+                    '                                        RM ' + data[i].cd_price +
+                    '                                   </h5>' +
                     '                                </div>' +
                     '                            </div>' +
                     '                        </div>' +
-                    '                    </div>'
+                    '                    </a>' +
+                    '                </div>'
                 );
             }
         },

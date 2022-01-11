@@ -282,7 +282,7 @@ window.addEventListener('load', (event) => {
             });
         } else {
             $('#display').append(
-                '        <div class="row my-3">' +
+                '        <div class="row">' +
                 '            <div class="col">' +
                 '                <div class="p-4 bg-white rounded-3 shadow-sm text-dark">' +
                 '                    <p class="mb-0">Your have no active orders :(</p>' +
