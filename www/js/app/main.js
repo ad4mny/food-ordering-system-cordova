@@ -15,7 +15,7 @@ window.addEventListener('load', (event) => {
 
 $(document).on('click', '#addOrder', function () {
 
-    var catalog_id = this.value;
+    var catalog_id = $(this).attr('value');
 
     if (catalog_id != null) {
 
@@ -36,7 +36,7 @@ $(document).on('click', '#addOrder', function () {
         }
 
         location.replace('checkout.html');
-    }
+    } 
 
 });
 
